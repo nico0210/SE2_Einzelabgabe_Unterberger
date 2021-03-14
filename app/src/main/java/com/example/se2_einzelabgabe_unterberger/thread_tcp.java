@@ -38,6 +38,9 @@ public class thread_tcp extends Thread {
                 BufferedReader inFromServer = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
                 outToServer.writeBytes(nachricht + "\n");
                 server_output = inFromServer.readLine();
+
+
+
             } catch (Exception e) {
                 Log.e("fail",e.toString());
                 throw e;

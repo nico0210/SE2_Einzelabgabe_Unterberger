@@ -30,4 +30,23 @@ public class MainActivity extends AppCompatActivity {
         } catch (Exception e) {
             tv.setText(e.toString());
         }
-}}
+}
+
+    public void berechnen(View view){
+        EditText nr_bearbeiten= findViewById(R.id.nr_bearbeiten);
+        String text = nr_bearbeiten.getText().toString();
+        TextView tv = findViewById(R.id.text_output);
+
+        char [] arr = {'j','a','b','c','d','e','f','g','h','i'};
+
+        char[] in = text.toCharArray();
+
+        for(int i=0; i < in.length;i++){
+            if (i%2 ==1){
+                in[i] = arr[Character.getNumericValue(in[i])];
+            }
+
+        }
+
+        tv.setText(new String(in));
+    }}
